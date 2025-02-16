@@ -23,7 +23,7 @@ app.post("/summarize", rateLimitMiddleware, async (req, res) => {
   try {
     const { text } = req.body;
 
-    if (!text || text.length > 5000) {
+    if (!text || text.length > 30000) {
       return res.status(400).json({ error: "Texte invalide" });
     }
 
